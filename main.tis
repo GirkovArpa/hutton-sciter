@@ -1,0 +1,18 @@
+const hutton = include library "./target/release/hutton";
+function self.ready() {
+  const w = self.intrinsicWidthMax();
+  const h = self.intrinsicHeight();
+  const (sw, sh) = view.screenBox(#frame, #dimension);
+  view.move((sw / 2) - (w / 2), (sh / 2) - (h / 2), w, h, true);
+}
+event click $(a) { Sciter.launch(this.@["href"]); return true; }
+$([type=checkbox]) << event click { $(#crypt).text = this.state.checked ? "Decrypt" : "Encrypt"; }
+function sanitize(string) { return string.replace(/[^a-z]/g, ""); }
+$(#crypt) << event click {
+  const input = sanitize($(#input).value);
+  const password = sanitize($(#password).value);
+  const key = sanitize($(#key).value);
+  const decrypt = $(#decrypt).state.checked;
+  const ciphertext = hutton.encrypt(input, password, key, decrypt);
+  $(#output).value = ciphertext;
+}

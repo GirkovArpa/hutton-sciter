@@ -1,0 +1,17 @@
+[package]
+name = "hutton"
+version = "0.1.0"
+authors = ["GirkovArpa <girkovarpa@protonmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+hutton-rust = "0.1.1"
+sciter-rs = { version = "*", features = ["extension"] }
+
+[lib]
+path = "src/hutton.rs"
+crate-type = ["cdylib"]
+test = false
+bench = false

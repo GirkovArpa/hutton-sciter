@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hutton Cipher</title>
+    <link href="main.css" rel="stylesheet">
+    <script src="main.tis" type="text/tiscript"></script>
+  </head>
+  <body>
+    <h1>Hutton Cipher</h1>
+    <div #credits>
+      <span>Encryption algorithm by <a href="https://old.reddit.com/user/EricBondHutton">EricBondHutton</a>.</span>
+      <span>This application uses <a href="https://sciter.com">Sciter</a> Engine,</span>
+      <span>© Terra Informatica Software, Inc.</span>
+    </div>
+    <form>
+      <input |text #input value="" novalue=input filter=abcdefghijklmnopqrstuvwxyz />
+      <input |text #password value="" novalue=password filter=abcdefghijklmnopqrstuvwxyz />
+      <input |text #key value="" novalue=key filter=abcdefghijklmnopqrstuvwxyz />
+      <span>
+        <button #crypt>Encrypt</button>
+        <label>Decrypt
+          <input |checkbox #decrypt />
+        </label>
+      </span>
+      <input |text #output value="" readonly novalue=output />
+    </form>
+  </body>
+</html>
